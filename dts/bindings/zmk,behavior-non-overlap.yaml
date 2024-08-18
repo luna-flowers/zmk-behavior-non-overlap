@@ -1,0 +1,21 @@
+# Copyright (c) 2024 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+
+description: Non-overlap behavior
+
+compatible: "zmk,behavior-non-overlap"
+
+include: one_param.yaml
+
+properties:
+  bindings:
+    type: phandles
+    required: true
+  resume-capacity:
+    type: int
+    description: Maximum number of keys can be resumed.
+  no-resume:
+    type: boolean
+    description: |
+      If set, no key will be resumed and the property `resume-capacity` is
+      ignored. This is the same as `resume-capacity` being set to `<0>`.

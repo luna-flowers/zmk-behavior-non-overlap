@@ -1,0 +1,20 @@
+#include <dt-bindings/zmk/keys.h>
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/kscan_mock.h>
+#include "../behavior_keymap.dtsi"
+
+/* Released non-overlap keys will not be resumed. */
+
+&kscan {
+    events = <
+        // Press &nkp A
+        ZMK_MOCK_PRESS(0,0,10)
+        // Press &nkp D
+        ZMK_MOCK_PRESS(1,0,10)
+        // Release &nkp A
+        ZMK_MOCK_RELEASE(0,0,10)
+        // Release &nkp D
+        ZMK_MOCK_RELEASE(1,0,10)
+        // &kp A is not resumed
+    >;
+};
